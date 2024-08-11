@@ -1,0 +1,51 @@
+<!-- reservations.component.html -->
+<div class="row p-3">
+    <div class="col-md-12">
+      <div class="card h-100">
+        <div class="card-header">
+            <h2>
+                <li class="menu-item">
+                    <a  class="menu-link">
+                      <i ><mat-icon style="color: blue">list_alt</mat-icon></i><!-- Remplacez 'fa-file-signature' par l'icône désirée -->
+                      <div style="color: rgb(43, 42, 42);"><b>   List Des Réservations</b> </div>
+                    </a>
+                  </li>
+            </h2>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Photo</th> 
+                <th>Numero de Télephone</th> 
+                <th>Email</th>
+                <th>Genre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reservation of reservations">
+                
+                <td>{{ getPassagerDetails(reservation.passagerId)?.nom }}</td>
+                <td>{{ getPassagerDetails(reservation.passagerId)?.prenom }}</td>
+                <td>
+                    <img *ngIf="getPassagerDetails(reservation.passagerId)?.photo"
+                         [src]="getPassagerDetails(reservation.passagerId)?.photo"
+                         alt="Photo Passager"
+                         style="width: 50px; height: 50px; object-fit: cover;">
+                    <!-- Afficher un texte alternatif si la photo n'est pas disponible -->
+                    <span *ngIf="!getPassagerDetails(reservation.passagerId)?.photo">Aucune photo</span>
+                  </td>
+                  <td>{{ getPassagerDetails(reservation.passagerId)?.numTel }}</td>
+
+                <td>{{ getPassagerDetails(reservation.passagerId)?.email }}</td>
+                <td>{{ getPassagerDetails(reservation.passagerId)?.genre }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

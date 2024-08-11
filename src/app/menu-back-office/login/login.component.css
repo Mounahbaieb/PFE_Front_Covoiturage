@@ -1,0 +1,33 @@
+/* styles.css ou login.component.css */
+/* styles.css ou login.component.css si spécifique au composant */
+.large-text-black {
+  font-size: 2.5rem; /* Ajustez la taille du texte selon vos besoins */
+  color: black;
+}
+
+
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  flex: 1;
+  padding: 50px;
+}
+
+.login-image {
+  flex: 1;
+  background-color: #fff; /* Changez cette couleur pour correspondre à l'image de fond désirée */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image img {
+  max-width: 100%;
+  height: auto;
+}
+.login{
+  background-color: rgba(255, 255, 255, 0.978);
+}

@@ -1,0 +1,207 @@
+<section class="formulaire">
+  <div class="container">
+    <div class="main-content container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <h5 class="title" style="color: rgb(52, 52, 52);">Veuillez remplir ce formulaire</h5><br/><br/><br/>
+          <form *ngIf="rideForm" [formGroup]="rideForm" (ngSubmit)="submitForm()">
+            <div class="steps">
+              <div class="step" [class.active]="currentStep === 1" (click)="setStep(1)">
+                <div class="step-number"><i>1</i></div>
+                <div class="step-title">Conducteur</div>
+              </div>
+              <div class="bar"></div>
+              <div class="step" [class.active]="currentStep === 2" (click)="setStep(2)">
+                <div class="step-number"><i>2</i></div>
+                <div class="step-title">Voiture</div>
+              </div>
+              <div class="bar"></div>
+              <div class="step" [class.active]="currentStep === 3" (click)="setStep(3)">
+                <div class="step-number"><i>3</i></div>
+                <div class="step-title">Trajet</div>
+              </div>
+              <div class="bar"></div>
+              <div class="step" [class.active]="currentStep === 4" (click)="setStep(4)">
+                <div class="step-number"><i>4</i></div>
+                <div class="step-title">Options</div>
+              </div>
+            </div>
+
+            <div *ngIf="currentStep === 1">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6><mat-icon>person</mat-icon> Informations du Conducteur</h6>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label for="inputEmail4">Nom </label>
+                    <input matInput formControlName="nom" class="form-control" placeholder="Nom">
+                  </div>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label for="inputEmail4">Prénom</label>
+                    <input matInput formControlName="prenom" class="form-control" placeholder="Prénom">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label class="label-large">Numéro du Téléphone</label>
+                    <input matInput formControlName="numDriver" class="form-control" placeholder="Numéro du Téléphone">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label class="label-large">genre</label>
+                    <select matInput formControlName="gender" class="form-control">
+                      <option>Homme</option>
+                      <option>Femme</option>
+                      <option>Autre</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label class="label-large">Photo du Profil</label>
+                    <input matInput formControlName="photoDriver" class="form-control" placeholder="Photo du Profil">
+                    <ngx-dropzone class="small-dropzone" (change)="onSelectDriverImage($event)">
+                      <ngx-dropzone-label>Ajoutez votre photo</ngx-dropzone-label>
+                      <ngx-dropzone-preview *ngFor="let f of driverFiles" [removable]="true" (removed)="onRemoveDriverImage(f)">
+                        <ngx-dropzone-label>{{f.name}}</ngx-dropzone-label>
+                      </ngx-dropzone-preview>
+                    </ngx-dropzone>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end">
+                <button type="button"  class="btn" style="background-color: #003064; color: white;" (click)="nextStep()">Next</button>
+              </div>
+            </div>
+
+            <div *ngIf="currentStep === 2">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6><mat-icon>directions_car</mat-icon> Informations de la Voiture</h6>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label for="inputEmail4">Marque</label>
+                    <input matInput formControlName="marque" class="form-control" placeholder="Marque">
+                  </div>
+                </div>
+                
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label for="inputEmail4">Numéro de Série</label>
+                    <input matInput formControlName="numSerie" class="form-control" placeholder="Numéro de Série">
+                  </div>
+                </div>
+                
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label class="label-large">Photo de la Voiture</label>
+                    <input matInput formControlName="photoVoiture" class="form-control" placeholder="Photo de la Voiture">
+                    <ngx-dropzone class="small-dropzone" (change)="onSelectCarImage($event)">
+                      <ngx-dropzone-label>Drag and Drop Car Image</ngx-dropzone-label>
+                      <ngx-dropzone-preview *ngFor="let f of carFiles" [removable]="true" (removed)="onRemoveCarImage(f)">
+                        <ngx-dropzone-label>{{f.name}} {{f.type}}</ngx-dropzone-label>
+                      </ngx-dropzone-preview>
+                    </ngx-dropzone>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end">
+                <button type="button"  class="btn" style="background-color: #003064; color: white;" (click)="nextStep()" >Next</button>
+              </div>
+            </div>
+
+            <div *ngIf="currentStep === 3">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6><mat-icon>map</mat-icon> Informations du Trajet</h6>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label class="label-large">Location de départ</label>
+                    <mat-select formControlName="lieuDeDepart" class="form-control" placeholder="Départ">
+                      <mat-option *ngFor="let location of locations" [value]="location">{{ location }}</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label class="label-large">Location de destination</label>
+                    <mat-select formControlName="lieuDesti" class="form-control" placeholder="Destination">
+                      <mat-option *ngFor="let location of locations" [value]="location">{{ location }}</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label class="label-large">Heure de Départ</label>
+                    <input matInput formControlName="timeDepart" type="time" class="form-control" placeholder="Heure de Départ">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label class="label-large">Date de départ</label><br>
+                    <mat-form-field>
+                      <mat-label>Choisir la date</mat-label>
+                      <input matInput [matDatepicker]="picker" formControlName="dateDepart">
+                      <mat-hint>{{ rideForm.value.dateDepart | date:'MM/dd/yyyy' }}</mat-hint>
+                      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker startView="year"></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  
+                </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label class="label-large">Nombre de places disponibles</label>
+                  <input matInput formControlName="nbrPlaceDispo" type="number" class="form-control" placeholder="Nombre de Places Disponibles">
+                </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label class="label-large">Tarif</label>
+                  <input matInput formControlName="tarif" class="form-control" placeholder="Tarif">
+                </div>
+              </div>
+            </div>
+
+              <div class="col-md-12 d-flex justify-content-end">
+                <button type="button"  class="btn" style="background-color: #003064; color: white;" (click)="nextStep()">Next</button>
+              </div>
+            </div>
+
+            <div *ngIf="currentStep === 4">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6><mat-icon>tune</mat-icon> Options</h6>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <mat-checkbox formControlName="climatisation" class="form-check-label">Climatisation</mat-checkbox>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <mat-checkbox formControlName="bagage" class="form-check-label">Bagage</mat-checkbox>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <mat-checkbox formControlName="fumeur" class="form-check-label">Fumeur</mat-checkbox>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end">
+                <button type="submit" class="btn" style="background-color: #003064; color: white;">Soumettre</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

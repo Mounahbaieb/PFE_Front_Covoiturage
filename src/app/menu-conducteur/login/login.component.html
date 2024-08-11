@@ -1,0 +1,55 @@
+<section id="login" class="login section">
+
+  <div class="login-container">
+    <div>
+      <div class="card-header app-brand justify-content-center" style="margin: -2px;;">
+        <a href="index.html" >
+          <span class="app-brand-logo demo">
+            <img src="./../../../assets/img/logo/CoRoute.PNG"height="200" width="350">
+          </span>
+        </a>
+      </div>
+      <div class="card-body">
+        <h2 class="mb-2 large-text-black">S'Identifier</h2>
+        <p class="mb-4">Bienvenue chez CommuRoute App</p>
+        
+        <form  *ngIf="conducteur" [formGroup]="conducteur" (ngSubmit)="signin()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email or Username</label>
+            <input type="text" class="form-control" id="email" name="email-username" placeholder="Entrez votre email "formControlName="email" autofocus />
+          </div>
+          <div class="mb-3 form-password-toggle">
+            <div class="d-flex justify-content-between">
+              <label class="form-label" for="password">Password</label>
+              <a href="auth-forgot-password-basic.html">
+                <small>Forgot Password?</small>
+              </a>
+            </div>
+            <div class="input-group input-group-merge">
+              <input type="password" id="password" class="form-control" formControlName="password"  placeholder="Entrez votre Password "  aria-describedby="password" />
+              <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember-me" />
+              <label class="form-check-label" for="remember-me"> Remember Me </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn d-grid w-100" style="background-color: #003064; color: white;"type="submit" (click)="signin()">Sign in</button>
+          </div>
+          <strong >Pas encore de compte ? <button (click)="register()" class="btn btn-link" >S'inscrire</button></strong>
+
+
+         
+          <br>
+
+        </form>
+      </div>
+    </div>
+    <div class="login-image">
+      <img src="../../../assets/img/elements/32.png" alt="Login Image" />
+    </div>
+  </div>
+  </section>

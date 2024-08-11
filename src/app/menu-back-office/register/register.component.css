@@ -1,0 +1,32 @@
+.large-text-black {
+    font-size: 2.5rem; /* Ajustez la taille du texte selon vos besoins */
+    color: black;
+  }
+  
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row-reverse; /* Inverse l'ordre des éléments */
+  }
+  
+  .register-form {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .register-image {
+    flex: 1;
+    background-color: #fff; /* Changez cette couleur pour correspondre à l'image de fond désirée */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .register-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  

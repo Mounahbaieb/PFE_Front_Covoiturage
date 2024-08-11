@@ -1,0 +1,92 @@
+<mat-dialog-content>
+    <form [formGroup]="form">  
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="close()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h2 align="center" class="modal-title" id="backDropModalTitle">Informations Du Conducteur</h2>
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="nom" class="form-label">Nom</label>
+              <mat-label>Nom</mat-label>
+              <input matInput placeholder="Nom" formControlName="nom" class="form-control">
+            </mat-form-field>
+          </div>
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="prenom" class="form-label">Prénom</label>
+              <mat-label>Prénom</mat-label>
+              <input matInput placeholder="Prénom" formControlName="prenom" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="gender" class="form-label">Genre</label>
+              <mat-label>Genre</mat-label>
+              <input matInput placeholder="Genre" formControlName="gender" class="form-control">
+            </mat-form-field>
+          </div>
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="numDriver" class="form-label">Téléphone</label>
+              <mat-label>Téléphone</mat-label>
+              <input matInput placeholder="Téléphone" formControlName="numDriver" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="email" class="form-label">Email</label>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName="email" class="form-control">
+            </mat-form-field>
+          </div>
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <label for="password" class="form-label">Password</label>
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" formControlName="password" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="form-group">
+            <label class="label-large">Photo du Profil</label>
+            <input matInput formControlName="photoDriver" class="form-control" placeholder="Photo du Profil">
+            <ngx-dropzone class="small-dropzone" (change)="onSelectDriverImage($event)">
+              <ngx-dropzone-label>Ajoutez votre photo</ngx-dropzone-label>
+              <ngx-dropzone-preview *ngFor="let f of driverFiles" [removable]="true" (removed)="onRemoveDriverImage(f)">
+                <ngx-dropzone-label>{{f.name}}</ngx-dropzone-label>
+              </ngx-dropzone-preview>
+            </ngx-dropzone>
+          </div>
+        </div> 
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="col-3"></div>
+    <div class="col-6 custom-button-group">
+      <button type="button" class="btn " style="background-color: #d50e0e; color: white;" (click)="save()">
+        Sauvegarder
+      </button>
+      <button type="button" class="btn " style="background-color: #3a3939; color: white;" data-bs-dismiss="modal" (click)="close()">Annuler</button>
+    </div>
+    <div class="col-3"></div>
+  </mat-dialog-actions>
+  <style>
+    .custom-button-group button {
+      margin-right: 20px; /* Ajustez la marge comme nécessaire */
+    }
+  </style>
+  

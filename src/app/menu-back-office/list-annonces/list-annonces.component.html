@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitations Annonces </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .btn {
+            margin-left: 5px;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .annonce-card {
+            margin-bottom: 15px;
+        }
+
+        .annonce-card .card-body .btn-group {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .annonce-card .card-body .btn-group .btn {
+            margin-right: 5px;
+        }
+
+        .profile-img {
+          position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: -30px auto 0;
+    margin-left: 10px;
+    background-color: #fff;
+    border: 5px solid #fff;
+        }
+
+        .card-body p i {
+            color: #d50e0e;
+            margin-right: 5px;
+        }
+        
+        .info-value {
+            font-weight: bold;
+        }
+
+        .annonce-details {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .annonce-details h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .annonce-details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="filter-container">
+            <div class="card-title mb-0">
+                <h1 >
+                    <li class="menu-item " style=" color: rgb(54, 54, 52);">
+                        <a class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-envelope"></i><!-- Icône List Sous Admin -->
+                            <div data-i18n="Analytics"><b> Invitations Annonces</b>
+                          </div>
+                        </a>
+                      </li>
+                    </h1>               </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 annonce-card" *ngFor="let annonce of annonces" (click)="goToAnnonceDetail(annonce.id)">
+                <div class="card">
+                    <img [src]="getPhotoVoiture(annonce.voitureId)" class="card-img-top" alt="Car Image">
+                    <img [src]="getPhotoConducteur(annonce.conducteurId)" class="profile-img" alt="Profile Image">
+
+                    <div class="card-body">
+                        <div class="annonce-details">
+                            <h3><mat-icon>map</mat-icon> <b>{{ annonce.lieuDeDepart }}  -  {{ annonce.lieuDesti }}</b></h3>
+                            <p>
+                                <i class="fas fa-calendar-alt"></i> Date : <span class="info-value">{{ annonce.dateDepart }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-clock"></i> Heure : <span class="info-value">{{ annonce.timeDepart }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Départ : <span class="info-value">{{ annonce.lieuDeDepart }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-flag-checkered"></i> Destination : <span class="info-value">{{ annonce.lieuDesti }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-user-friends"></i> Places disponibles : <span class="info-value">{{ annonce.nbrPlaceDispo }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-suitcase"></i> Bagages : <span class="info-value">{{ annonce.bagage ? 'Oui' : 'Non' }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-temperature-high"></i> Climatisation : <span class="info-value">{{ annonce.climatisation ? 'Oui' : 'Non' }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-smoking-ban"></i> Fumeur : <span class="info-value">{{ annonce.fumeur ? 'Oui' : 'Non' }}</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-money-bill-wave"></i> Tarif : <span class="info-value">{{ annonce.tarif }} </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+

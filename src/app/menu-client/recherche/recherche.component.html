@@ -1,0 +1,138 @@
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitations Cards</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <div class="sidebar">
+        <br><br><br>        <br><br><br>
+
+        <div class="card p-3">
+            <h2 class="card-title"><b>Trier par</b></h2>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="selectedCigarette" (change)="applyFilters()">
+                <label class="form-check-label" >
+                    <i class="material-icons">smoking_rooms</i> Cigarette autorisée
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="selectedBaggage" (change)="applyFilters()">
+                <label class="form-check-label">
+                    <i class="material-icons">card_travel</i> Baggage autorisé
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="selectedClimatisation" (change)="applyFilters()">
+                <label class="form-check-label" >
+                    <i class="material-icons">ac_unit</i> Climatisation
+                </label>
+            </div>
+            <br>
+            <h2 class="card-title"><b>Heure de départ</b></h2>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" >
+                <label class="form-check-label" [(ngModel)]="before6" (change)="applyFilters()">
+                    Avant 06:00
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="between6And12" (change)="applyFilters()">
+                <label class="form-check-label" >
+                    06:00 - 12:00
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"[(ngModel)]="between12And18" (change)="applyFilters()" >
+                <label class="form-check-label" >
+                    12:01 - 18:00
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="between18And24" (change)="applyFilters()">
+                <label class="form-check-label" >
+                    18:01 - 00:00
+                </label>
+            </div>
+            <br>
+            <input type="number" class="form-control" placeholder="Nombre de places" min="1" max="10" [(ngModel)]="nbrPlaces">
+            <br>
+            <button class="btn" style="background-color: #003064; color: white;" (click)="resetFilters()">
+                <i class="material-icons">refresh</i> Reset
+              </button>
+              
+        </div>
+    </div>
+<br>
+    <div class="main-content">
+        <div class="container">
+            <h1><b>Bienvenue chez CommuRoute!</b></h1>
+            <div class="search-bar" >
+                <select class="form-control" [(ngModel)]="depart">
+                    <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+                  </select>
+                  <select class="form-control" [(ngModel)]="destination">
+                    <option *ngFor="let location of locations"[value]="location">{{ location }}</option>
+                  </select>
+                  
+                <input type="date" class="form-control" [(ngModel)]="dateDepart">
+                <input type="number" class="form-control" placeholder="Nombre de places" min="1" max="10" [(ngModel)]="nbrPlaces">
+                <button class="btn" style="background-color: #003064; color: white;" (click)="rechercher()">Rechercher</button>
+            </div>
+
+            <div class="filter-container">
+                <div class="card-title mb-0">
+                    <h3><b>Filtrer les Annonces</b></h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 annonce-card" *ngFor="let annonce of annoncesFiltrees" (click)="goToAnnonceDetail(annonce.id)">
+                    <div class="card">
+                        <img [src]="getPhotoVoiture(annonce.voitureId)" class="card-img-top" alt="Car Image">
+                        <img [src]="getPhotoConducteur(annonce.conducteurId)" class="profile-img" alt="Profile Image">
+
+                        <div class="card-body">
+                            <div class="annonce-details">
+                                <h3><i class="material-icons">map</i> <b>{{ annonce.lieuDeDepart }} - {{ annonce.lieuDesti }}</b></h3>
+                                <p>
+                                    <i class="fas fa-calendar-alt"></i> Date : <span class="info-value">{{ annonce.dateDepart }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i> Heure : <span class="info-value">{{ annonce.timeDepart }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-map-marker-alt"></i> Départ : <span class="info-value">{{ annonce.lieuDeDepart }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-flag-checkered"></i> Destination : <span class="info-value">{{ annonce.lieuDesti }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-friends"></i> Places disponibles : <span class="info-value">{{ annonce.nbrPlaceDispo }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-suitcase"></i> Bagages : <span class="info-value">{{ annonce.bagage ? 'Oui' : 'Non' }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-temperature-high"></i> Climatisation : <span class="info-value">{{ annonce.climatisation ? 'Oui' : 'Non' }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-smoking-ban"></i> Fumeur : <span class="info-value">{{ annonce.fumeur ? 'Oui' : 'Non' }}</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-money-bill-wave"></i> Tarif : <span class="info-value">{{ annonce.tarif }} </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>

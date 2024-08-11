@@ -1,0 +1,163 @@
+
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme shadow">
+          <div class="app-brand demo">
+            <a routerLink="/" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <img src="./../../../assets/img/logo/CoRoute.PNG" width="150" height="70">
+              </span>
+             </a>
+             
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+             <br><br>
+            <li class="menu-item ">
+                <a routerLink="/dashboard" routerLinkActive="active" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-user"></i>
+                  <div >Dashbord</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a (click)="redirectToForm()" class="menu-link">
+                  <i class="menu-icon fas fa-file-signature"></i> <!-- Remplacez 'fa-file-signature' par l'icône désirée -->
+                  <div>Formulaire Annonce</div>
+                </a>
+              </li>
+                
+              <li class="menu-item">
+                <a (click)="redirectToAnnonces()" class="menu-link">
+                  <i class="menu-icon fas fa-bullhorn"></i> <!-- Remplacez 'fa-file-signature' par l'icône désirée -->
+                  <div> Annonce</div>
+                </a>
+              </li>
+             
+              
+           
+          </ul>
+        </aside>
+
+         <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav  class="layout-navbar navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar" >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                <div class="navbar-nav align-items-center">
+                    <div class="nav-item d-flex align-items-center">
+                      <input
+                        type="text"
+                        class="form-control border-0 shadow-none"
+                        placeholder="Search..."
+                        aria-label="Search..."
+                      />
+                      <i class="bx bx-search fs-4 lh-0"></i>
+
+                    </div>
+                  </div>
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item lh-1 me-3">
+                    <i class='menu-icon bx bxs-cog'></i>
+                </li>
+
+                <!-- User -->
+                Bonjour <b style="margin-left: 10px;">{{email}} </b>
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                     <div class="avatar avatar-online">
+                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" >
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle" (click)="logout()" >Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
+
+ 
+           <div class="content-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+          <router-outlet></router-outlet>
+            </div>
+         
+
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-overlay layout-menu-toggle">
+    </div>
+
+    </div>
+ 
+ 
+    
+

@@ -1,0 +1,43 @@
+{
+  "invitations": [
+    {
+      "id": "2",
+      "title": "Cup Cakou",
+      "email": "Mac@gmail.com",
+      "telephone": "+216 22 555 444",
+      "adresse": "Sfax",
+      "image": "../../../assets/img/voitures/v4.jpg",
+      "profileImage":"../../../assets/img/avatars/5.png"
+    },
+    {
+      "id": "1",
+      "title": "MACdonalds",
+      "email": "Mac@gmail.com",
+      "telephone": "+216 22 555 444",
+      "adresse": "Sfax",
+      "image": "../../../assets/img/voitures/v3.jpg",
+      "profileImage":"../../../assets/img/avatars/5.png"
+
+    },
+    {
+      "id": "1",
+      "title": "MACdonalds",
+      "email": "Mac@gmail.com",
+      "telephone": "+216 22 555 444",
+      "adresse": "Sfax",
+      "image": "../../../assets/img/voitures/v2.jpg",
+      "profileImage":"../../../assets/img/avatars/5.png"
+
+    },
+    {
+      "id": "1",
+      "title": "MACdonalds",
+      "email": "Mac@gmail.com",
+      "telephone": "+216 22 555 444",
+      "adresse": "Sfax",
+      "image": "../../../assets/img/voitures/v1.jpg",
+      "profileImage":"../../../assets/img/avatars/5.png"
+
+    }
+  ]
+}

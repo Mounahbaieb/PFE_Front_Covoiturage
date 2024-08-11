@@ -1,0 +1,87 @@
+<div class="row p-3">
+    <!-- Order Statistics -->
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                <div class="card-title mb-0">
+                    <h3>                    <i class="menu-icon fas fa-bullhorn"></i>       
+                        <b>Annonces</b></h3>
+                </div>
+              
+            </div>
+            
+        </div>
+    </div>
+  </div>
+  <div class="row p-3">
+    <!-- Order Statistics -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="row">
+                <div class="col-3 mt-2">
+                    <h3 class="card-header" style="color: #303233;"><b>List Des Annonces</b> </h3>
+                </div>
+                <div class="col-6 mt-2 p-3">
+                    <div class="navbar-nav align-items-left">
+                        <div class="nav-item d-flex align-items-left">
+                            <div class="input-group" style="margin-right: 5px;">
+                                <div class="nav-item d-flex align-items-center">
+                                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
+                                        aria-label="Search..."  />
+                                    <i class="bx bx-search fs-4 lh-0"></i>
+                                </div>
+                                <button class="btn btn-outline-secondary" type="button" >Effacer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Marque Voiture</th>
+                        <th>Photo de la voiture</th>
+                        <th>Départ</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Nombre de place</th>
+                        <th>Statut Annonce</th>
+                        <th>Action</th>
+                        <th>Voir Réservations</th> <!-- Nouveau champ pour voir les réservations -->
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0" *ngFor="let annonce of annonces">
+                      <tr>
+                        <td>{{ getMarque(annonce.voitureId) }}</td>
+                        <td><img [src]="getPhotoVoiture(annonce.voitureId)" class="profile-img" alt="Photo Voiture"></td>
+                        <td>{{ annonce.lieuDeDepart }}</td>
+                        <td>{{ annonce.lieuDesti }}</td>
+                        <td>{{ annonce.dateDepart }}</td>
+                        <td>{{ annonce.timeDepart }}</td>
+                        <td>{{ annonce.nbrPlaceDispo }}</td>
+                        <td>{{ getEtatAnnonce(annonce.etat) }}</td>
+                        <td>
+                          <button mat-icon-button (click)="onedit(annonce.id)">
+                            <mat-icon style="color: rgb(255, 166, 0)">remove_red_eye</mat-icon>
+                          </button>
+                          <button mat-icon-button color="primary" (click)="deleteAnnonce(annonce.id)">
+                            <mat-icon style="color: red;">delete</mat-icon>
+                          </button>
+                        </td>
+                        <td>
+                          <button mat-icon-button (click)="viewReservations(annonce.id)">
+                            <mat-icon style="color: blue">list_alt</mat-icon>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </div>
+    </div>
+  </div>
+  

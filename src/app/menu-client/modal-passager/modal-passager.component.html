@@ -1,0 +1,80 @@
+<mat-dialog-content>
+    <form [formGroup]="form">  
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="close()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h2 align="center" class="modal-title" id="backDropModalTitle">Informations Du Passager</h2>
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Nom</mat-label>
+              <input matInput placeholder="Nom" formControlName="nom" class="form-control">
+            </mat-form-field>
+          </div>
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Prénom</mat-label>
+              <input matInput placeholder="Prénom" formControlName="prenom" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Genre</mat-label>
+              <input matInput placeholder="Genre" formControlName="genre" class="form-control">
+            </mat-form-field>
+          </div>
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Téléphone</mat-label>
+              <input matInput placeholder="Téléphone" formControlName="numTel" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-6 mb-0">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName="email" class="form-control">
+            </mat-form-field>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="form-group">
+            <label class="label-large">Photo du Profil</label>
+            <input matInput formControlName="photo" class="form-control" placeholder="Photo du Profil">
+            <ngx-dropzone class="small-dropzone" (change)="onSelectPassagerImage($event)">
+              <ngx-dropzone-label>Ajoutez votre photo</ngx-dropzone-label>
+              <ngx-dropzone-preview *ngFor="let f of passagerFiles" [removable]="true" (removed)="onRemovePassagerImage(f)">
+                <ngx-dropzone-label>{{f.name}}</ngx-dropzone-label>
+              </ngx-dropzone-preview>
+            </ngx-dropzone>
+          </div>
+        </div> 
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="col-3"></div>
+    <div class="col-6 custom-button-group">
+      <button type="button" class="btn" style="background-color: #003064; color: white;"  (click)="save()" >
+        Save
+      </button>
+      <button type="button" class="btn" style="background-color: #434445; color: white;" data-bs-dismiss="modal" (click)="close()">Annuler</button>
+    </div>
+    <div class="col-3"></div>
+  </mat-dialog-actions>
+  <style>
+    .custom-button-group button {
+      margin-right: 50px; /* Ajustez la marge comme nécessaire */
+    }
+  </style>
+  

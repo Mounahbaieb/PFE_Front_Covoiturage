@@ -1,0 +1,99 @@
+<div class="row p-3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <div *ngIf="annonce$ | async as annonce" class="ride-details col-md-12">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                <div class="card-title mb-0">
+                    <h1><b>Détails Annonce</b></h1>
+                </div>
+            </div>
+            <div>
+                <div class="profile">
+                    <div class="cover-photo">
+                        <div class="rectangle"></div>
+                    </div>
+                    <div class="profile-photo" align="left">
+                        <img [src]="getPhotoConducteur(annonce.conducteurId)" alt="Profile Photo">
+                    </div>
+                    <div class="username">
+                        <h1><b>{{ getnom(annonce.conducteurId) }} {{ getprenom(annonce.conducteurId) }}</b></h1>
+                    </div>
+                    <div class="username">
+                        <h3><i class="fas fa-user"></i> {{ getgender(annonce.conducteurId) }} | <i class="fas fa-phone"></i> {{ getnumdriver(annonce.conducteurId) }}</h3>
+                    </div>
+                    <div class="b">
+                        <button class="btn" style="background-color: #003064; color: white;" (click)="openNavigateReservation(annonce.id)"><i class="bx bx-plus" aria-hidden="true"></i>Reserver</button>
+                    </div>
+                   
+                    <hr style="color: #cc0b0b;">
+
+                    <div class="info">
+                        <p><i class="fas fa-calendar-alt"></i> {{ annonce.dateDepart }} | <i class="fas fa-clock"></i> {{ annonce.timeDepart }}</p>
+                        <div class="route">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i> <b>{{ annonce.lieuDeDepart }}</b>
+                            </div>
+                            <div class="line"></div>
+                            <div class="location">
+                                <i class="fas fa-flag-checkered"></i> <b>{{ annonce.lieuDesti }}</b>
+                            </div>
+                        </div>
+                        <i class="fas fa-user-friends"></i> Disponibilité de Places <span class="info-value"><b>{{ annonce.nbrPlaceDispo }}</b></span>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-3">
+                            <h1 class="pb-1 mb-4"><mat-icon>directions_car</mat-icon> Informations Voiture</h1>
+                            <div class="card-footer">
+                                <h3>Marque : <b>{{ getMarque(annonce.voitureId) }}</b></h3>
+                                <h3>Numéro de Série : <b>{{ getSerie(annonce.voitureId) }}</b></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="pb-1 mb-4"><mat-icon>tune</mat-icon> Option Voiture</h1>
+                    <div class="card-footer">
+
+                    <div class="col-md mb-3">
+                        <div class="box mb-3">
+                            <div class="row g-0 mb-3 mt-2 p-2">
+                                <div class="col-md-4">
+                                    <img width="350px" height="250px" [src]="getPhotoVoiture(annonce.voitureId)" alt="Card image" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="item">
+                                            <h4><mat-icon>ac_unit</mat-icon> Climatisation :<b>{{ annonce.climatisation ? 'Oui' : 'Non' }}</b></h4>
+                                        </div>
+                                        <div class="item">
+                                            <h4><mat-icon>card_travel</mat-icon> Bagage <b>{{ annonce.bagage ? 'Autorisée' : 'Non Autorisée' }}</b></h4>
+                                        </div>
+                                        <div class="item">
+                                            <h4><mat-icon>smoking_rooms</mat-icon> <b>{{ annonce.fumeur ? 'Fumeur' : 'Non-Fumeur' }}</b></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="color: #cc0b0b;">
+                        <div class="card-body">
+                            <div class="item">
+                                <h2><i class="fas fa-money-bill-wave"></i> <span class="titre">Prix Total pour 1 passager</span></h2>
+                            </div>
+                            <div class="item">
+                                <h2><span class="tarif"><i class="fas fa-money"></i> <b>{{ annonce.tarif }} TND</b></span></h2>
+                            </div>
+                        </div>
+                        
+                        <hr style="color: #cc0b0b;">
+                        <div><button class="btn" style="background-color: #003064; color: white;" (click)="navigateBack()">   <mat-icon aria-label="Retour">arrow_back</mat-icon>Retour
+                        </button></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

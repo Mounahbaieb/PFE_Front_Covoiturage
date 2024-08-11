@@ -1,0 +1,80 @@
+<div class="row p-3">
+    <!-- Order Statistics -->
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                <div class="card-title mb-0">
+                    <h3> <i class="menu-icon fas fa-bullhorn"></i> <b> List des Sous Administrateurs</b></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row p-3">
+    <!-- Order Statistics -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="row">
+                <div class="col-3 mt-2">
+                    <h3 class="card-header">
+                        <li class="menu-item " style=" color: rgb(54, 54, 52);">
+                            <a class="menu-link">
+                                <i class='menu-icon bx bx-user-circle'></i> <!-- Icône List Sous Admin -->
+                                <div data-i18n="Analytics"><b> Sous Administrateurs</b>
+                              </div>
+                            </a>
+                          </li>
+                        </h3>                    
+                </div>
+                <div class="col-6 mt-2 p-3">
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item d-flex align-items-left">
+                            <div class="input-group" style="margin-right: 5px;">
+                                <div class="nav-item d-flex align-items-center">
+                                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
+                                    <i class="bx bx-search fs-4 lh-0"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 mt-2 p-3">
+                    <button class="btn btn" type="button" data-bs-toggle="modal" (click)="open()"
+                        data-bs-target="#backDropModal"  style="background-color: #003064; color: white;">
+                        <i class="menu-icon bx bx-plus"></i> Ajouter Sous Admin</button>
+                </div>
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>password</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        <tr *ngFor="let Administrateur of administrateurs">
+                            <td>{{ Administrateur.nom }}</td>
+                            <td>{{ Administrateur.prenom }}</td>
+                            <td>{{ Administrateur.email }}</td>
+                            <td>{{ Administrateur.password }}</td>
+
+                            <td>
+                                <button mat-icon-button aria-label="Example icon button with a home icon" (click)="editAdministrateur(Administrateur.id)">
+                                    <mat-icon style="color: orange">remove_red_eye</mat-icon>
+                                </button>
+                                <button mat-icon-button color="primary" aria-label="Supprimer" (click)="deleteAdministrateur(Administrateur.id)">
+                                    <mat-icon style="color: red;">delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

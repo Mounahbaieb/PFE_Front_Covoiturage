@@ -1,0 +1,143 @@
+<div class="row p-3">
+    <!-- Order Statistics -->
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                <div class="card-title mb-0">
+                    <h3>
+                        <b>
+                            Invitation / Cup Cakou
+                        </b>
+                    </h3>
+                </div>
+                <div class="card p-3 menu-item">
+                    <li class=" d-flex mb-4 pb-1 ">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary">
+                                <i class='menu-icon bx bxs-calendar'></i></span>
+                        </div>
+                        <div class=" d-flex w-100 flex-wrap align-items-center justify-content-between gap-2  ">
+                            <div class="me-2 dropdown ">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <h6 class="mb-0">Filtre Periode</h6>
+                                </button><br>
+                                <small class="text-muted">12 april 2023 - 15 Janvier 2024</small>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <div class="card p-3">
+                                        <table>
+                                            <tr>
+                                                <th *ngFor="let day of weekDays">{{ day }}</th>
+                                            </tr>
+                                            <tr *ngFor="let week of weeks">
+                                                <td *ngFor="let day of week" (click)="selectDate(day)">
+                                                    <p *ngIf="day!==0">
+                                                        {{ day }}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </div>
+
+
+
+            </div>
+            <div>
+                <div class="profile">
+                    <div class="cover-photo"></div>
+                    <div class="profile-photo" align="left">
+                        <img src="../../../assets/img/avatars/5.png" alt="Profile Photo">
+
+                    </div>
+                    <div class="username">
+                        <h1>John Doe</h1>
+                    </div>
+                    <div class="bio">
+                        Email:test@test.com | tel: 22222222 | Adresse :Sfax</div>
+                    <div class="b">
+                        <button mat-button class="btn btn-primary" color="orange">
+                            <i class="bx bx-plus" aria-hidden="true"></i>Accepter</button>
+                        <button mat-button class="btn btn-primary">
+                            <i class="bx bx-trash" aria-hidden="true" color="red"></i></button>
+
+                    </div>
+
+
+
+                    <div>
+                        <h4> A la une</h4>
+
+
+                        <div class="row">
+                            <div class="col-3 ">
+                                <div class="box">
+                                    <div class="card-body">
+                                        <img class="ph" src="../../../assets/img/avatars/5.png" height="80" width="80">
+
+                                    </div>
+                                    <div class="card-footer">
+                                        test test test
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 ">
+                                <div class="box">
+                                    <div class="card-body">
+                                        <img class="ph" src="../../../assets/img/avatars/5.png" height="80" width="80">
+
+                                    </div>
+                                    <div class="card-footer">
+                                        test test test
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 ">
+                                <div class="box">
+                                    <div class="card-body">
+                                        <img class="ph" src="../../../assets/img/avatars/5.png" height="80" width="80">
+
+                                    </div>
+                                    <div class="card-footer">
+                                        test test test
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="pb-1 mb-4">List Article</h2>
+                          
+                          <div class="col-md mb-3">
+                            <div class="box mb-3">
+                              <div class="row g-0 mb-3 mt-2 p-2">
+                                <div class="col-md-4">
+                                  <img class="card-img card-img-left" width="100" height="200" style="border-radius: 10%;" src="../assets/img/elements/12.jpg" alt="Card image" />
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">
+                                      This is a wider card with supporting text below as a natural lead-in to additional content.
+                                      This content is a little bit longer.
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr style="color: orange;">
+                          </div> 
+                     </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

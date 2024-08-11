@@ -1,0 +1,287 @@
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="row">
+      <!-- Order Statistics -->
+      <div class="col-md-12">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center justify-content-between pb-0">
+            <div class="card-title mb-0">
+                <h2>
+                    <b>
+                       Dashbord 
+                    </b>                
+                  </h2>   
+                  <p> Bonjour !  , Bienvenu chez CommuRoute App  </p>
+            </div>
+            <div class="card p-3 menu-item">
+                   <li class=" d-flex mb-4 pb-1 ">
+                    <div class="avatar flex-shrink-0 me-3">
+                      <span class="avatar-initial rounded bg-label-primary">
+                        <i class='menu-icon bx bxs-calendar'></i></span>
+                    </div>
+                    <div class=" d-flex w-100 flex-wrap align-items-center justify-content-between gap-2  ">
+                      <div class="me-2 dropdown ">
+                        <button class="btn p-0"
+                        type="button"
+                        id="cardOpt3"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                            <h6 class="mb-0">Filtre Periode</h6>
+                        </button><br>
+                        <small class="text-muted">12 Aout 2024 - 25 Aout 2024</small>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                            <div class="card p-3">
+                               <table>
+                                <tr>
+                                    <th *ngFor="let day of weekDays">{{ day }}</th>
+                                </tr>
+                                <tr *ngFor="let week of weeks">
+                                    <td *ngFor="let day of week" (click)="selectDate(day)">
+                                        <p *ngIf="day!==0">
+                                          {{ day }}  
+                                        </p></td>                                </tr>
+                            </table> 
+                            </div>
+                            
+                          </div>
+                      </div>
+                      
+                    </div>
+                  </li>
+            </div>
+           
+         
+             
+          </div>
+            <div class="row mt-5 p-3">
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                     <div class="row">
+                        <div class="col-4">
+                             <div class="avatar flex-shrink-2">
+                                <img
+                                src="../assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                        </div>
+                         </div>
+                         <div class="col-8">
+                            <strong class="fw-semibold d-block mb-0" style="font-size: 40px; color: rgb(15, 15, 15);">10</strong>
+                            <p class="card-title mb-1"style="font-size: 12px;">Annonces en cours <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                     <div class="row">
+                        <div class="col-4">
+                             <div class="avatar flex-shrink-2">
+                                <img
+                                src="../assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                        </div>
+                         </div>
+                         <div class="col-8">
+                            <strong class="fw-semibold d-block mb-0" style="font-size: 40px; color: rgb(15, 15, 15);">8</strong>
+                            <p class="card-title mb-1"style="font-size: 12px;">Annonces  Accepeter <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                     <div class="row">
+                        <div class="col-4">
+                             <div class="avatar flex-shrink-2">
+                                <img
+                                src="../assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                        </div>
+                         </div>
+                         <div class="col-8">
+                            <strong class="fw-semibold d-block mb-0" style="font-size: 40px; color: rgb(15, 15, 15);">2</strong>
+                            <p class="card-title mb-1"style="font-size: 12px;">Annonces Annuler <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="row p-3">
+                <div class="col-6  mb-3">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Pie Chart en Dinar Tunisien</h5>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orederStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row card-body mt-3">
+                     
+                         <div class="col-4 d-flex mb-4 pb-1">
+                        
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <div class="shadow rounded-circle  text-white d-flex justify-content-center align-items-center" style="width: 100px; height: 100px;">
+                                 
+                                        <h6 class="card-title m-0">8</h6>
+                                        
+                                </div><p class="card-text mt-2">Total Annonces Accepeter</p>
+                                    
+                            </div>
+                            
+                            
+                          </div>
+                        </div>
+                        <div class="col-4 d-flex mb-4 pb-1">
+                        
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                              <div class="me-2">
+                                  <div class="shadow rounded-circle  text-white d-flex justify-content-center align-items-center" style="width: 100px; height: 100px;">
+                                   
+                                          <h6 class="card-title m-0">4</h6>
+                                          
+                                  </div><p class="card-text mt-2">Total Coducteurs</p>
+                                      
+                              </div>
+                              
+                              
+                            </div>
+                        </div>
+                        <div class="col-4 d-flex mb-4 pb-1">
+                        
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                              <div class="me-2">
+                                  <div class="shadow rounded-circle  text-white d-flex justify-content-center align-items-center" style="width: 100px; height: 100px;">
+                                   
+                                          <h6 class="card-title m-0">4</h6>
+                                          
+                                  </div><p class="card-text mt-2">Total Sous Admins</p>
+                                      
+                              </div>
+                              
+                              
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3  ">
+                    <div class="card h-100">
+                      <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                        <div class="card-title mb-0">
+                          <h5 class="m-0 me-2"> Chart de commandes</h5>
+                          <small>Lorem ipsum, dolor sit amet consectetur </small>
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-primary rounded"
+                            type="button"
+                           >Save Report</button>
+                        </div>
+                      </div>
+                      <div class="row card-body mt-3">
+                        <canvas id="sinusoidalChart" width="400" height="200"></canvas>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3 ">
+                    <div class="card h-100">
+                      <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                        <div class="card-title mb-0">
+                          <h5 class="m-0 me-2"> Revenue Total</h5>
+                          <small>Lorem ipsum, dolor sit amet consectetur </small>
+                        </div>
+                        <div class="dropdown">
+                          
+                        </div>
+                      </div>
+                      <div class="row card-body mt-3">
+                        <canvas id="doubleSinusoidalChart" width="400" height="400"></canvas>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3  ">
+                    <div class="card h-100">
+                      <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                        <div class="card-title mb-0">
+                          <h5 class="m-0 me-2"> Maps des Cient</h5>
+                          <small>Lorem ipsum, dolor sit amet consectetur </small>
+                        </div>
+                        <div class="dropdown">
+                          <select
+                            class="btn btn-primary rounded"
+                            type="button"
+                           >
+                        <option>
+                            Semaine
+                        </option>
+                    </select>
+                        </div>
+                      </div>
+                      <div class="row card-body mt-3">
+                        <canvas id="myChart" width="400" height="200"></canvas>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>

@@ -1,0 +1,394 @@
+              
+    <div class="row p-3">
+        <!-- Order Statistics -->
+        <div class="col-md-12">  
+          <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+              <div class="card-title mb-0">
+                <h3>
+                      <b>
+                         Sous Admin
+                      </b>                
+                    </h3>   
+               </div>
+              <div class="card p-3 menu-item">
+                     <li class=" d-flex mb-4 pb-1 ">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary">
+                          <i class='menu-icon bx bxs-calendar'></i></span>
+                      </div>
+                      <div class=" d-flex w-100 flex-wrap align-items-center justify-content-between gap-2  ">
+                        <div class="me-2 dropdown ">
+                          <button class="btn p-0"
+                          type="button"
+                          id="cardOpt3"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                              <h6 class="mb-0">Filtre Periode</h6>
+                          </button><br>
+                          <small class="text-muted">12 april 2023 - 15 Janvier 2024</small>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                              <div class="card p-3">
+                                 <table>
+                                  <tr>
+                                      <th *ngFor="let day of weekDays">{{ day }}</th>
+                                  </tr>
+                                  <tr *ngFor="let week of weeks">
+                                      <td *ngFor="let day of week" (click)="selectDate(day)">
+                                          <p *ngIf="day!==0">
+                                            {{ day }}  
+                                          </p></td>                                </tr>
+                              </table> 
+                              </div>
+                              
+                            </div>
+                        </div>
+                        
+                      </div>
+                    </li>
+              </div>
+             
+           
+               
+            </div>
+              <div class="row mt- p-3">
+                <div class="col-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                       <div class="row">
+                          <div class="col-4">
+                               <div class="avatar flex-shrink-2">
+                                  <img
+                                  src="../assets/img/icons/unicons/chart-success.png"
+                                  alt="chart success"
+                                  class="rounded"
+                                />
+                          </div>
+                           </div>
+                           <div class="col-8">
+                            <b class="fw-semibold d-block" style="font-size: 40px; color: rgb(15, 15, 15);margin-bottom: 5px;">365</b>
+                            <p class="card-title mb-1 mt-3"style="font-size: 12px;">Commande  en cours <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                       <div class="row">
+                          <div class="col-4">
+                               <div class="avatar flex-shrink-2">
+                                  <img
+                                  src="../assets/img/icons/unicons/chart-success.png"
+                                  alt="chart success"
+                                  class="rounded"
+                                />
+                          </div>
+                           </div>
+                           <div class="col-8">
+                            <b class="fw-semibold d-block" style="font-size: 40px; color: rgb(15, 15, 15);margin-bottom: 5px;">365</b>
+                            <p class="card-title mb-1 mt-3"style="font-size: 12px;">Commande  en cours <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                       <div class="row">
+                          <div class="col-4">
+                               <div class="avatar flex-shrink-2">
+                                  <img
+                                  src="../assets/img/icons/unicons/chart-success.png"
+                                  alt="chart success"
+                                  class="rounded"
+                                />
+                          </div>
+                           </div>
+                           <div class="col-8">
+                            <b class="fw-semibold d-block" style="font-size: 40px; color: rgb(15, 15, 15);margin-bottom: 5px;">365</b>
+                            <p class="card-title mb-1 mt-3"style="font-size: 12px;">Commande  en cours <br>
+                                <i class="bx bx-up-arrow-alt"></i> 
+                            <small>
+                                +4% (30 jours)</small></p>                           
+                           
+                          
+                         </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                       <div class="row">
+                          <div class="col-4">
+                               <div class="avatar flex-shrink-2">
+                                  <img
+                                  src="../assets/img/icons/unicons/chart-success.png"
+                                  alt="chart success"
+                                  class="rounded"
+                                />
+                          </div>
+                           </div>
+                           <div class="col-8">
+                              <b class="fw-semibold d-block" style="font-size: 40px; color: rgb(15, 15, 15);margin-bottom: 5px;">365</b>
+                              <p class="card-title mb-1 mt-3"style="font-size: 12px;">Commande  en cours <br>
+                                  <i class="bx bx-up-arrow-alt"></i> 
+                              <small>
+                                  +4% (30 jours)</small></p>                           
+                             
+                            
+                           </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+             
+          
+          </div>
+        </div>
+       
+      </div>
+      <div class="row p-3">
+          <!-- Order Statistics -->
+          <div class="col-md-12">  
+              <div class="card">
+                  <div class="row">
+                      <div class="col-3 mt-2">
+                          <h5 class="card-header">List Des Sous Admin </h5>
+  
+                      </div>
+                      <div class="col-6 mt-2 p-3">
+                          <div class="navbar-nav align-items-left">
+                              <div class="nav-item d-flex align-items-left">
+                                  <div class="input-group " style="margin-right: 5px;">
+                                      <span class="input-group-text">
+                                          <i class="bx bx-search fs-4 lh-0"></i>
+                                      </span><input
+                                          type="text"
+                                          class="form-control border-1  rounded shadow-none w-90"
+                                          placeholder="Search..."
+                                          aria-label="Search..."
+                                      />
+                                    
+                                  </div>
+                              </div>
+                              
+                            </div>
+                      </div>
+                      <div class="col-3 mt-2 p-3">
+                        <button class="btn btn" type="button"  data-bs-toggle="modal"
+                        data-bs-target="#backDropModal" style="background-color: orange; color: white;">
+                            <i class="menu-icon bx bx-plus"></i> Ajouter Sous Admin</button>
+                      </div>
+                  </div>
+  
+                  <div class="table-responsive text-nowrap">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Identifiant</th>
+                          <th>Nom et Prenom</th>
+                          <th>Adresse</th>
+                          <th>Date</th>
+                          <th>E-mail</th>
+                          <th>Tax(dt)</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                         
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+                        
+                        <tr>
+                          <td>1</td>
+                           <td>Ryheb Elmoncer</td>
+                          <td>                          
+                             Sfax  
+                          </td>
+                          <td>
+                         12/02/2023
+                          <td>
+                            test@gmail.com
+                          </td>
+                          <td>
+                           100 dt
+                          </td>
+                         
+                            <td><span class="badge bg-label-primary rounded me-1"><strong>En ligne</strong></span></td>
+                        
+                          <td>
+                             
+                                <button mat-icon-button  aria-label="Example icon button with a home icon"
+                                data-bs-toggle="modal"
+                        data-bs-target="#backDropModal" >
+                                    <mat-icon style="color:orange">remove_red_eye</mat-icon>
+                                  </button>
+                                   <button mat-icon-button  aria-label="Example icon button with a home icon">
+                                  <mat-icon style="color: blue;">camera</mat-icon>
+                                </button>
+                                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                  <mat-icon  style="color: red;">block</mat-icon>
+                                </button>
+                              
+                          </td>
+                        </tr>
+                        
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>     
+                </div>
+               
+            
+            </div>
+            <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
+                <div class="modal-dialog">
+                  <form class="modal-content">
+                    <div class="modal-header">
+                      
+                        <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 align="center" class="modal-title" id="backDropModalTitle">Informations De Livreur</h2>
+                        <div class="row">
+                            <div class="col-6 mb-0">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Prénom</mat-label>
+                                    <input matInput placeholder="Prénom" class="form-control">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-6 mb-0">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Nom</mat-label>
+                                    <input matInput placeholder="Nom"class="form-control">
+                                  </mat-form-field>
+                            </div>
+                        </div> 
+                        <div class="row">
+                          <div class="col-6 mb-0">
+                              <mat-form-field appearance="outline" class="w-100">
+                                  <mat-label>E-mail</mat-label>
+                                  <input matInput placeholder="E-mail" class="form-control">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-6 mb-0">
+                              <mat-form-field appearance="outline" class="w-100">
+                                  <mat-label>Mot de passe</mat-label>
+                                  <input matInput placeholder="Mot de passe"class="form-control">
+                                </mat-form-field>
+                          </div>
+                      </div> 
+                      <div class="row">
+                        <div class="col-12 mb-0">
+                          <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Nom Utilisateur</mat-label>
+                            <input matInput placeholder="Nom Utilisateur"class="form-control">
+                          </mat-form-field>
+                        </div>               
+                    </div> 
+                    <div class="row">
+                      <div class="col-6 mb-0">
+                          <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Carte Identite</mat-label>
+                              <input matInput placeholder="Carte Identite" class="form-control">
+                          </mat-form-field>
+                      </div>
+                      <div class="col-6 mb-0">
+                          <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Contact </mat-label>
+                              <input matInput placeholder="Contact"class="form-control">
+                            </mat-form-field>
+                      </div>
+                  </div>     
+                  <div class="row">
+                    <div class="col-6">
+                        <mat-form-field   class="w-100">
+                            <mat-label>Pays </mat-label>
+                            <select matNativeControl class="form-control" requi red>
+                              <option value="volvo">Volvo</option>
+                              <option value="saab">Saab</option>
+                              <option value="mercedes">Mercedes</option>
+                              <option value="audi">Audi</option>
+                            </select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field   class="w-100">
+                          <mat-label>Region </mat-label>
+                          <select matNativeControl class="form-control"  >
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                          </select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field   class="w-100">
+                        <mat-label>Status </mat-label>
+                        <select matNativeControl class="form-control"  >
+                          <option value="volvo">Volvo</option>
+                          <option value="saab">Saab</option>
+                          <option value="mercedes">Mercedes</option>
+                          <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+                </div> 
+                    </div>
+                    
+                    <div class="row mb-3">
+                         
+                             <div class="col-3">
+
+                             </div>
+                            <div class="col-6">
+                                <button type="button"   class="btn btn-primary" style="background-color: orange; color: white;" style="margin-left: 10px; margin-right: 10px;" >
+                                    Confirmer
+                                  </button>
+                                  <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                             <div class="col-3">
+
+                             </div>
+                        </div>
+                     
+                  
+                  </form>
+                </div>
+              </div>
+              

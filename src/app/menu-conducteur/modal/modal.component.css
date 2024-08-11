@@ -1,0 +1,235 @@
+.card-header h5 {
+    padding: 15px; 
+    height: 30px; 
+    font-family: "Jost", sans-serif;
+    font-size: 40px; 
+    color: #00223B;
+}
+
+.formulaire {
+    background-color: #fcfcfc;
+}
+
+.small-dropzone {
+    max-width: 200px;  /* Ajustez la largeur selon vos besoins */
+    max-height: 100px; /* Ajustez la hauteur selon vos besoins */
+    border: 2px dashed #ccc;  /* Optionnel: Ajoutez des bordures pour plus de visibilité */
+    padding: 10px;
+    margin-top: 10px;  /* Ajoutez des marges pour espacer */
+}
+
+.small-dropzone ngx-dropzone-preview {
+    max-width: 180px;  /* Ajustez la largeur selon vos besoins */
+    max-height: 80px;  /* Ajustez la hauteur selon vos besoins */
+    margin-top: 5px;  /* Ajoutez des marges pour espacer */
+}
+
+.title {
+    color: #343a40;
+    padding: 15px; 
+    height: 30px; 
+    font-family: "Jost", sans-serif;
+    font-size: 40px; 
+    color: #00223B;
+}
+
+.white-background .mat-form-field-flex {
+    background-color: white;
+}
+
+.white-background .mat-form-field-underline {
+    background-color: white;
+}
+
+.title2 {
+    color: #343a40;
+    font-family: "Jost", sans-serif;
+    font-size: 20px; 
+    color: #00223B;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formulaire-border {
+    border: 2px solid #00223B;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h6 {
+    font-size: 20px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mat-checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.mat-checkbox-label mat-icon {
+    margin-right: 5px;
+}
+
+.mat-select {
+    width: 100%;
+}
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .step .step-number {
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .step .step-number i {
+    font-size: 20px;
+  }
+  
+  .step .step-title {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .step.active .step-number {
+    background-color: #d50e0e;
+  }
+  
+  .step.active .step-title {
+    font-weight: bold;
+    color: #d50e0e;
+  }
+  
+  .form-content {
+    display: none;
+  }
+  
+  .form-content.active {
+    display: block;
+  }
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.step {
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+}
+
+.step .step-number {
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step .step-number i {
+    font-size: 20px;
+}
+
+.step .step-title {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.step.active .step-number {
+    background-color: #d50e0e;
+    color: rgb(255, 255, 255);
+
+}
+
+.step.active .step-title {
+    font-weight: bold;
+    color: #d50e0e;
+}
+
+.bar {
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 3px;
+    background-color: #ddd;
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.active {
+    display: block;
+}
+
+.title {
+    color: #343a40;
+    padding: 15px;
+    height: 30px;
+    font-family: "Jost", sans-serif;
+    font-size: 30px;
+    color: #404040;
+}
+
+/* Ajoutez d'autres styles ici si nécessaire */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .step .step-number {
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+  }
+  
+  .step .step-title {
+    margin-top: 10px;
+  }
+  
+  .step.active .step-number {
+    background-color: #d50e0e;
+  }
+  .modal-content {
+    max-height: 80vh; /* Ajustez cette valeur selon vos besoins */
+    overflow-y: auto;
+  }
+  
+  .modal-header, .modal-footer {
+    padding: 1rem;
+  }

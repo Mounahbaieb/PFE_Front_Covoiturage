@@ -1,0 +1,33 @@
+.menu-link.active {
+    background-color: orange;
+    color: white;
+  }
+  .layout-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+  }
+  .content-wrapper {
+    padding-left: 100; /* Adjust based on the width of the fixed menu */
+  }
+  .layout-page{
+    padding-left: 250px;
+  }
+  .menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000; /* Couleur par défaut */
+}
+
+.menu-icon {
+    font-size: 20px; /* Ajustez la taille de l'icône selon vos besoins */
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+.menu-link.active {
+    color: #000000; /* Couleur active du lien */
+}

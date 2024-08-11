@@ -1,0 +1,172 @@
+
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+  
+          <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme shadow">
+            <div class="app-brand demo">
+              <a routerLink="/" class="app-brand-link">
+                <span class="app-brand-logo demo">
+                  <img src="./../../../assets/img/logo/CoRoute.PNG" width="150" height="70">
+                </span>
+               </a>
+
+              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                <i class="bx bx-chevron-left bx-sm align-middle"></i>
+              </a>
+            </div>
+            <br>  <br>
+
+            <div class="menu-inner-shadow"></div>
+  
+            <ul class="menu-inner py-1">
+              <!-- Dashboard -->
+              <li class="menu-item ">
+                  <a routerLink="/menu-back-office/dashboard" routerLinkActive="active" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-home"></i> <!-- Icône Dashboard -->
+                    <div >Dashbord</div>
+                  </a>
+                </li>
+              <li class="menu-item ">
+                  <a routerLink="/InvitationsAnnonces" routerLinkActive="active" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-envelope"></i> <!-- Icône Invitations Annonces -->
+                    <div >Invitations Annonces</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a routerLink="/ListAnnonceAccepter" routerLinkActive="active" class="menu-link">
+                    <i class='menu-icon bx bx-list-check'></i> <!-- Icône Listes des annonces Acceptées -->
+                    <div data-i18n="Analytics"> Listes des annonces Accépter</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a routerLink="/ListConducteur" routerLinkActive="active" class="menu-link">
+                    <i class='menu-icon bx bx-car'></i> <!-- Icône List Conducteurs -->
+                    <div data-i18n="Analytics"> List Conducteurs</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a routerLink="/ListSousAdmin" routerLinkActive="active" class="menu-link">
+                    <i class='menu-icon bx bx-user-circle'></i> <!-- Icône List Sous Admin -->
+                    <div data-i18n="Analytics"> List Sous Admin</div>
+                  </a>
+                </li>
+                
+            </ul>
+          </aside>
+  
+           <div class="layout-page">
+            <!-- Navbar -->
+  
+            <nav  class="layout-navbar navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar" >
+              <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                  <i class="bx bx-menu bx-sm"></i>
+                </a>
+              </div>
+  
+              <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                  <div class="navbar-nav align-items-center">
+                      <div class="nav-item d-flex align-items-center">
+                        <input
+                          type="text"
+                          class="form-control border-0 shadow-none"
+                          placeholder="Search..."
+                          aria-label="Search..."
+                        />
+                        <i class="bx bx-search fs-4 lh-0"></i>
+  
+                      </div>
+                    </div>
+  
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                  <li class="nav-item lh-1 me-3">
+                      <i class='menu-icon bx bxs-cog'></i>
+                  </li>
+  
+                  <!-- User -->
+                  Bonjour <b style="margin-left: 10px;">{{email}}</b>
+                  <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                       <div class="avatar avatar-online">
+                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar avatar-online">
+                                <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <span class="fw-semibold d-block">John Doe</span>
+                              <small class="text-muted">Admin</small>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="bx bx-user me-2"></i>
+                          <span class="align-middle">My Profile</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="bx bx-cog me-2"></i>
+                          <span class="align-middle">Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <span class="d-flex align-items-center align-middle">
+                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                            <span class="flex-grow-1 align-middle">Billing</span>
+                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" >
+                          <i class="bx bx-power-off me-2"></i>
+                          <span class="align-middle" 
+                           >Log Out</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!--/ User -->
+                </ul>
+              </div>
+            </nav>
+  
+   
+             <div class="content-wrapper">
+              <div class="container-xxl flex-grow-1 container-p-y">
+            <router-outlet></router-outlet>
+              </div>
+           
+  
+              <div class="content-backdrop fade"></div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="layout-overlay layout-menu-toggle">
+      </div>
+  
+      </div>
+   
+   
+      
+  
+  
